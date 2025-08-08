@@ -109,13 +109,18 @@ OpenGL3DCube/
 
 ---
 
-## 📄 License
-
 ### 🔐 License
 
 OpenGL3DCube is released under the [MIT License](LICENSE) —
 you are free to use, modify, and distribute the code for personal, educational, or commercial use.
 
-> This project was bootstrapped with [CodeCanvas](https://github.com/drghost14/) — a modular OpenGL C++ starter.
+> ### Built On
+
+This project is built on:
+- [OpenGLTextures](https://github.com/drghost14/OpenGLTextures) – for texture handling  
+- [CodeCanvas](https://github.com/drghost14/CodeCanvas) – my C++ OpenGL template
+
+
 
 ---
+
