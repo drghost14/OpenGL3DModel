@@ -1,8 +1,3 @@
----
-
-### `LICENSE`
-
-```text
 MIT License
 
 Copyright © 2025 Muhammad Hassnain Khichi (aka drghost)
@@ -33,3 +28,4 @@ furnished to do so, subject to the following conditions:
 
 5. This license applies only to the code in this repository. Dependencies  
    such as Raylib, GLAD, and GLM retain their own licensing terms.
+
