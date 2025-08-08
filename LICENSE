@@ -1,3 +1,6 @@
+---
+
+### `LICENSE`
 
 ```text
 MIT License
@@ -29,5 +32,4 @@ furnished to do so, subject to the following conditions:
    or project credits is appreciated by the community.
 
 5. This license applies only to the code in this repository. Dependencies  
-   such as Raylib and GLAD retain their own licensing terms.
-```
+   such as Raylib, GLAD, and GLM retain their own licensing terms.
