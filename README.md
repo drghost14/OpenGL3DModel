@@ -57,7 +57,7 @@ OpenGLTextures/
      ```
 4. Run the demo  
    ```bash
-   ./OpenGLTextures
+   ./main.exe
    ```
    A window will open displaying a textured quad on a light background.
 
@@ -95,3 +95,4 @@ you’re free to use, distribute, and remix this application for personal or edu
 > Attribution is appreciated. Raylib and other dependencies maintain their own license terms.
 
 ---
+
