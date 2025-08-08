@@ -19,9 +19,15 @@
 
 ```text
 OpenGL3DCube/
+├── .vscode/              # VS Code tasks for build/clean
 ├── include/
-├── data/                
-│   └── car.png           # Sample cube texture  
+│   ├── enet/             # ENet networking headers
+│   ├── raylib/           # Raylib headers
+│   ├── glad/             # OpenGL loader headers
+│   ├── KHR/              # Khronos headers (e.g., khrplatform.h)
+│   └── glm/              # Math library for vectors, matrices, transforms
+├── data/                 # assets 
+│   └── car.png           # Sample car texture  
 ├── shaders/             
 │   ├── vertex.glsl       # Vertex shader  
 │   └── fragment.glsl     # Fragment shader  
@@ -123,4 +129,5 @@ This project is built on:
 
 
 ---
+
 
