@@ -7,7 +7,7 @@ out vec2 tex_coords;
 
 uniform mat4 model;
 uniform mat4 cameraView;
-uniform mat4 projection;
+uniform mat4 cameraProjection;
 
 void main ()
 {
