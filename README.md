@@ -1,6 +1,6 @@
-# OpenGL3DCube
+# OpenGL3DModel
 
-**OpenGL3DCube** is a clean and modern C++ graphics demo showcasing real-time 3D cube rendering with lighting, custom camera controls, and textured surfaces using Raylib, GLAD, and OpenGL 3.3. It's built upon the CodeCanvas template and provides reusable classes for camera movement, shader management, texture loading, VAO/VBO abstraction, and more — a solid foundation for learning modern OpenGL or building interactive 3D visualizations.
+**OpenGL3DModel** is a clean and modern C++ graphics demo showcasing real-time 3D model rendering with custom camera controls, and textured surfaces using Raylib, GLAD, and OpenGL 3.3. It's built upon the CodeCanvas template and provides reusable classes for camera movement, shader management, texture loading, VAO/VBO abstraction, and more — a solid foundation for learning modern OpenGL or building interactive 3D visualizations.
 
 ---
 
@@ -26,8 +26,9 @@ OpenGL3DCube/
 │   ├── glad/             # OpenGL loader headers
 │   ├── KHR/              # Khronos headers (e.g., khrplatform.h)
 │   └── glm/              # Math library for vectors, matrices, transforms
-├── data/                 # assets 
-│   └── car.png           # Sample car texture  
+├── data/                 # assets
+│   ├── car.glb           # simple car model 
+│   └── car_texture.png           # Sample car texture  
 ├── shaders/             
 │   ├── vertex.glsl       # Vertex shader  
 │   └── fragment.glsl     # Fragment shader  
@@ -46,7 +47,7 @@ OpenGL3DCube/
 1. Clone the repository
 
    ```bash
-   git clone https://github.com/drghost14/OpenGL3DCube.git
+   git clone https://github.com/drghost14/OpenGL3DModel.git
    cd OpenGL3DCube
    ```
 
@@ -84,22 +85,27 @@ OpenGL3DCube/
 
 ## 🧩 Core Components
 
-* **ShaderClass**
-  Handles loading, compiling, linking, and using GLSL shader programs.
-* **TextureClass**
-  Uses Raylib to load 2D images and create OpenGL textures with filtering options and mipmaps.
 * **CameraClass**
   Provides first-person-style movement using WASD + arrow keys, and builds a view matrix via `glm::lookAt`.
 * **VaoClass**
   Manages OpenGL Vertex Array Object setup and attribute binding.
 * **BufferClass**
   Wraps buffer object generation and data uploading (VBO + EBO).
+* **ShaderClass**
+  Handles loading, compiling, linking, and using GLSL shader programs.
+* **TextureClass**
+  Uses Raylib to load 2D images and create OpenGL textures with filtering options and mipmaps.
+* **MeshClass**
+  Handles VAO and EBO and draws the mesh to the screen.
+* **ModelClass**
+  Handles vertices, indices and texCoords and uses raylib to load model.
 
 ---
 
 ## 🎮 Controls
 
 * **WASD** — Move camera position
+* **SPACE / LEFT_SHIFT** — Move camera position vertical
 * **Arrow Keys** — Rotate camera (yaw + pitch)
 * **ESC** — Close window
 
@@ -123,11 +129,12 @@ you are free to use, modify, and distribute the code for personal, educational, 
 > ### Built On
 
 This project is built on:
-- [OpenGLTextures](https://github.com/drghost14/OpenGLTextures) – for texture handling  
+- [OpenGLTextures](https://github.com/drghost14/OpenGL3DCube) – for 3d cube
 - [CodeCanvas](https://github.com/drghost14/CodeCanvas) – my C++ OpenGL template
 
 
 
 ---
+
 
 
