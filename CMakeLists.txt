@@ -1,6 +1,6 @@
 # =============================================================================
 # Project      : main (OpenGL 3D Learning)
-# Version      : 1.6
+# Version      : 1.6b
 # Author       : Muhammad Hassnain Khichi (aka drghost)
 # Description  : Statically links ENet (libenet.a) and Raylib (libraylib.a)
 #               Configures build types, compiler flags, and packaging targets
@@ -93,7 +93,7 @@ target_link_libraries(${PROJECT_NAME} PRIVATE
 )
 
 #───────────────────────────────────────────────────────────────────────────────
-# 7. Custom Targets: Strip & Package
+# 7.a Custom Targets: Strip & Package
 #───────────────────────────────────────────────────────────────────────────────
 
 # Strip symbols from the final exe
@@ -119,6 +119,31 @@ add_custom_target(release_package
     COMMAND ${CMAKE_COMMAND} --build . --target package
 )
 
+# ───────────────────────────────────────────────────────────────────────────────
+# 7.b Parallel-build target 
+# ───────────────────────────────────────────────────────────────────────────────
+
+include(ProcessorCount)
+ProcessorCount(NUM_CORES)
+if (NOT NUM_CORES)
+  set(NUM_CORES 1)
+endif()
+message(STATUS "Configured to build in parallel using ${NUM_CORES} logical processors")
+
+add_custom_target(pr
+  # print a header
+  COMMAND ${CMAKE_COMMAND} -E echo ""
+  COMMAND ${CMAKE_COMMAND} -E echo "Starting parallel build with ${NUM_CORES} threads..."
+  COMMAND ${CMAKE_COMMAND}
+          -E time
+          ${CMAKE_COMMAND}
+            --build "${CMAKE_BINARY_DIR}"
+            --config $<CONFIG>
+            --parallel ${NUM_CORES}
+  COMMENT "Parallel build (${NUM_CORES} threads) with timing"
+  USES_TERMINAL
+)
+
 #───────────────────────────────────────────────────────────────────────────────
 # 8. Usage Instructions
 #───────────────────────────────────────────────────────────────────────────────
@@ -130,5 +155,8 @@ add_custom_target(release_package
 #
 # To strip & package:
 #   cmake --build . --target release_package
+#
+# Now you can invoke:
+#   cmake --build . --target pr --config Release
 #
 # Final executable lives in ../main.exe (and dist/main.exe once packaged)
