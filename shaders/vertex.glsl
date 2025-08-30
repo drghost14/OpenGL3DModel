@@ -11,6 +11,6 @@ uniform mat4 cameraProjection;
 
 void main ()
 {
-    gl_Position = projection * cameraView * model * vec4 (aPos, 1.0);
+    gl_Position = cameraProjection * cameraView * model * vec4 (aPos, 1.0);
     tex_coords  = aTexCoords;
 }
